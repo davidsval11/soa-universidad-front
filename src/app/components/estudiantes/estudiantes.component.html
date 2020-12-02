@@ -1,0 +1,82 @@
+<div class="wrapper">
+    <div class="content-wrapper">
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <h2 class="mb-0">{{ titulo }}</h2>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item">
+                  Home
+                </li>
+                <li class="breadcrumb-item active">{{ titulo }}</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="content">
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-header pt-2 pb-2">
+              <div class="row">
+                <div class="col-md-11"></div>
+                <div class="col-md-1">
+                  <div class="btn-group float-right">
+                    <button type="button" class="btn btn-primary" routerLink="/estudiantes/form">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body p-0">
+              <table id="users" class="table table-bordered table-striped table-hover table-sm">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Numero Documento</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Email</th>
+                    <th>Ciudad</th>
+                    <th>Accion</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let estudiante of lista">
+                    <td>{{ estudiante.id }}</td>
+                    <td>{{ estudiante.n_documento }}</td>
+                    <td>{{ estudiante.nombres }}</td>
+                    <td>{{ estudiante.apellidos }}</td>
+                    <td>{{ estudiante.email }}</td>
+                    <td>{{ estudiante.ciudad }}</td>
+                    <td>
+                      <div class="btn-group float-right">
+                        <button type="button" class="btn btn-sm bg-navy" [routerLink]="['/estudiantes/form',estudiante.id]">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-danger" (click)="eliminar(estudiante)">
+                          <i class="fas fa-trash-alt"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <mat-paginator [length]="totalRegistros" [pageSize]="totalPorPagina" [pageIndex]="paginaActual"
+                [pageSizeOptions]="pageSizeOptions" (page)="paginar($event)" showFirstLastButtons class="float-left mx-2">
+              </mat-paginator>
+            </div>
+            <div class="card-footer">
+  
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  
