@@ -1,8 +1,10 @@
+import { Grupo } from './grupo';
+
 export class Evaluacion {
     id:number;
-    grupo_id:number;
+    grupo:Grupo;
     nombre:string;
-    tiempo:string;
-    puntos:string;
+    tiempo:number;
+    puntos:number;
     create_at:string;
 }
