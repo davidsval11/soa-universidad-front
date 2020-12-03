@@ -14,6 +14,8 @@ import { EstudiantesComponent } from './components/estudiantes/estudiantes.compo
 import { FacultadesComponent } from './components/facultades/facultades.component';
 import { EvaluacionesComponent } from './components/evaluaciones/evaluaciones.component';
 import { EstudianteFormComponent } from './components/estudiantes/estudiante-form.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/usuarios/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { EstudianteFormComponent } from './components/estudiantes/estudiante-for
     EstudiantesComponent,
     FacultadesComponent,
     EvaluacionesComponent,
-    EstudianteFormComponent
+    EstudianteFormComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     LayoutModule,

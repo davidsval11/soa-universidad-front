@@ -6,6 +6,8 @@ import { EstudiantesComponent } from './components/estudiantes/estudiantes.compo
 import { EstudianteFormComponent } from './components/estudiantes/estudiante-form.component';
 import { FacultadesComponent } from './components/facultades/facultades.component';
 import { EvaluacionesComponent } from './components/evaluaciones/evaluaciones.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/usuarios/login.component';
 
 
 const routes: Routes = [
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path:'estudiantes/form', component:EstudianteFormComponent},
   {path:'estudiantes/form/:id', component:EstudianteFormComponent},
   {path:'facultades', component:FacultadesComponent},
-  {path:'evaluaciones', component:EvaluacionesComponent}
+  {path:'evaluaciones', component:EvaluacionesComponent},
+  {path:'home', component:HomeComponent},
+  {path:'login', component:LoginComponent}
 ];
 
 @NgModule({
