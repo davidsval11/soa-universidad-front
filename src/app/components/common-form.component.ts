@@ -20,7 +20,7 @@ export abstract class CommonFormComponent <E extends Generic,S extends CommonSer
 
   public crear(){
     this.service.crear(this.model).subscribe(m=>{
-      Swal.fire('Nuevo',`${this.nombreModel} ${m.nombres} creado con exito!`,'success');
+      Swal.fire('Nuevo',`${this.nombreModel} creado con exito!`,'success');
       this.router.navigate([this.redirect]);
     }, err =>{
       if(err.status === 400){
@@ -40,7 +40,7 @@ export abstract class CommonFormComponent <E extends Generic,S extends CommonSer
 
   public modificar(){
     this.service.crear(this.model).subscribe(m=>{
-      Swal.fire('Modificado',`${this.nombreModel} ${m.nombres} modificado con exito!`,'success');
+      Swal.fire('Modificado',`${this.nombreModel} modificado con exito!`,'success');
       this.router.navigate([this.redirect]);
     }, err =>{
       if(err.status === 400){

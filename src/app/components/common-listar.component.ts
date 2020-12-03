@@ -40,7 +40,7 @@ export abstract class CommonListarComponent<E extends Generic, S extends CommonS
   public eliminar(entity: E): void {
     Swal.fire({
       title: 'Alerta!',
-      text: `Seguro de eliminar a ${entity.nombres}?`,
+      text: `Seguro de eliminar el / la ${this.nombreModel}?`,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -50,7 +50,7 @@ export abstract class CommonListarComponent<E extends Generic, S extends CommonS
       if (result.isConfirmed) {
         this.service.eliminar(entity.id).subscribe(() => {
           this.calcularRangos();
-          Swal.fire('Eliminado', `${this.nombreModel} ${entity.nombres} eliminado con exito!`, 'success');
+          Swal.fire('Eliminado', `${this.nombreModel} eliminado con exito!`, 'success');
         });
       }
     });

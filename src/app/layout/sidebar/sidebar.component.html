@@ -1,49 +1,55 @@
-<div class="sidebar">
-  <!-- Sidebar user panel (optional) -->
-  <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-    <div class="image">
-      <img src="assets/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+<aside *ngIf="authService.isAuthenticated()" class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a href="index3.html" class="brand-link">
+    <img src="assets/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      style="opacity: .8">
+    <span class="brand-text font-weight-light">Universidad</span>
+  </a>
+  <div class="sidebar" *ngIf="authService.isAuthenticated()">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      
+      <div class="info">
+        <a href="" class="d-block">{{authService.usuario.username}}</a>
+      </div>
     </div>
-    <div class="info">
-      <a href="#" class="d-block">Alexander Pierce</a>
-    </div>
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <a href="#" routerLink="/estudiantes" routerLinkActive="active" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Estudiantes
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" routerLink="/profesores" routerLinkActive="active" class="nav-link">
+            <i class="nav-icon fas fa-user-tie"></i>
+            <p>
+              Profesores
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-university"></i>
+            <p>
+              Facultades
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-book-reader"></i>
+            <p>
+              Evaluaciones
+            </p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
   </div>
-  <!-- Sidebar Menu -->
-  <nav class="mt-2">
-    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-      <li class="nav-item">
-        <a href="#" routerLink="/estudiantes" routerLinkActive="active"  class="nav-link">
-          <i class="nav-icon fas fa-users"></i>
-          <p>
-            Estudiantes
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#" routerLink="/profesores" routerLinkActive="active" class="nav-link">
-          <i class="nav-icon fas fa-user-tie"></i>
-          <p>
-            Profesores
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#"  class="nav-link">
-          <i class="nav-icon fas fa-university"></i>
-          <p>
-            Facultades
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#"  class="nav-link">
-          <i class="nav-icon fas fa-book-reader"></i>
-          <p>
-            Evaluaciones
-          </p>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <!-- /.sidebar-menu -->
-</div>
+</aside>

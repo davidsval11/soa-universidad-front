@@ -9,24 +9,38 @@ import Swal from 'sweetalert2';
   templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
-  usuario:Usuario;
-  titulo:string='Iniciar sesión';
-  constructor(private authService:AuthService, private router:Router) { 
-    this.usuario= new Usuario();
+  usuario: Usuario;
+  titulo: string = 'Iniciar sesión';
+
+  constructor(private authService: AuthService, private router: Router) {
+    this.usuario = new Usuario();
   }
 
   ngOnInit(): void {
+    if (this.authService.isAuthenticated()) {
+      Swal.fire('Login', `Hola ${this.authService.usuario.username}, ya estás autenticado! `, 'info');
+      this.router.navigate(['/home']);
+    }
   }
 
-  public login():void{
-    if(this.usuario.username == null || this.usuario.password == null){
-      Swal.fire('Error Login', 'Username o password estan vacios', 'error');
+  public login(): void {
+    console.info(this.usuario);
+    if (this.usuario.username == null || this.usuario.password == null) {
+      Swal.fire('Error Login', 'Username o password vacios', 'error');
       return;
     }
-    this.authService.login(this.usuario).subscribe(response =>{
-      this.router.navigate(['home']);
-      Swal.fire('Login', `Hola ${response.username}, has iniciado con exito!`,'success');
-    });
+    this.authService.login(this.usuario).subscribe(response => {
+      console.log(response);
+      this.authService.guardarUsuario(response.access_token);
+      this.authService.guardarToken(response.access_token);
+      let usuario = this.authService.usuario;
+      this.router.navigate(['/home']);
+      Swal.fire('Login', `Hola ${usuario.username}, has iniciado sesión con éxito! `, 'success');
+    }, err => {
+      if (err.status == 400) {
+        Swal.fire('Error Login', 'Usuario o clave incorrectos!', 'error');
+      }
+    })
   }
 
 }

@@ -11,7 +11,7 @@ import { LoginComponent } from './components/usuarios/login.component';
 
 
 const routes: Routes = [
-  {path:'', pathMatch:'full', redirectTo:'profesores'},
+  {path:'', pathMatch:'full', redirectTo:'login'},
   {path:'profesores', component:ProfesoresComponent},
   {path:'profesores/form', component:ProfesorFormComponent},
   {path:'profesores/form/:id', component:ProfesorFormComponent},

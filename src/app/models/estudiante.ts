@@ -1,6 +1,4 @@
-import { Generic } from './generic';
-
-export class Estudiante implements Generic{
+export class Estudiante{
     id:number;
     n_documento:string;
     nombres:string;
