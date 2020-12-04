@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/usuarios/login.component';
 import { PeriodosAcademicosComponent } from './components/periodos-academicos/periodos-academicos.component';
 import { PeriodosAcademicosFormComponent } from './components/periodos-academicos/periodos-academicos-form.component';
+import { DepartamentosComponent } from './components/departamentos/departamentos.component';
+import { DepartamentoFormComponent } from './components/departamentos/departamento-form.component';
 
 
 const routes: Routes = [
@@ -31,7 +33,11 @@ const routes: Routes = [
   // RUTAS PERIODOS ACADEMICOS
   {path:'periodos-academicos', component:PeriodosAcademicosComponent},
   {path:'periodos-academicos/form', component:PeriodosAcademicosFormComponent},
-  {path:'periodos-academicos/form/:id', component:PeriodosAcademicosFormComponent}
+  {path:'periodos-academicos/form/:id', component:PeriodosAcademicosFormComponent},
+  // RUTAS DEPARTAMENTOS
+  {path:'departamentos', component:DepartamentosComponent},
+  {path:'departamentos/form', component:DepartamentoFormComponent},
+  {path:'departamentos/form/:id', component:DepartamentoFormComponent}
   
 ];
 

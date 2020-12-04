@@ -18,6 +18,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/usuarios/login.component';
 import { PeriodosAcademicosComponent } from './components/periodos-academicos/periodos-academicos.component';
 import { PeriodosAcademicosFormComponent } from './components/periodos-academicos/periodos-academicos-form.component';
+import { DepartamentosComponent } from './components/departamentos/departamentos.component';
+import { DepartamentoFormComponent } from './components/departamentos/departamento-form.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { PeriodosAcademicosFormComponent } from './components/periodos-academico
     HomeComponent,
     LoginComponent,
     PeriodosAcademicosComponent,
-    PeriodosAcademicosFormComponent
+    PeriodosAcademicosFormComponent,
+    DepartamentosComponent,
+    DepartamentoFormComponent
   ],
   imports: [
     LayoutModule,
