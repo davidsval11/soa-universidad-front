@@ -7,9 +7,9 @@
   </a>
   <div class="sidebar" *ngIf="authService.isAuthenticated()">
     <!-- Sidebar user panel (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-      
-      <div class="info">
+    <div class="user-panel mt-2 pb-4 mb-2 d-flex">
+      <div class="pull-left">
+        <img src="assets/avatar5.png" style="width: 58px;" class="img-circle" alt="User Image">       
         <a href="" class="d-block">{{authService.usuario.username}}</a>
       </div>
     </div>
@@ -17,15 +17,15 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-          <a href="#" routerLink="/estudiantes" routerLinkActive="active" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
+          <a routerLink="/estudiantes" routerLinkActive="active" class="nav-link">
+            <i class="nav-icon fas fa-user-friends"></i>
             <p>
               Estudiantes
             </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" routerLink="/profesores" routerLinkActive="active" class="nav-link">
+          <a routerLink="/profesores" routerLinkActive="active" class="nav-link">
             <i class="nav-icon fas fa-user-tie"></i>
             <p>
               Profesores
@@ -69,6 +69,22 @@
             <i class="nav-icon fas fa-brain"></i>
             <p>
               Departamentos
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/cursos" routerLinkActive="active" class="nav-link">
+            <i class="nav-icon fas fa-chalkboard-teacher"></i>
+            <p>
+              Cursos
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/grupos" routerLinkActive="active" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Grupos
             </p>
           </a>
         </li>

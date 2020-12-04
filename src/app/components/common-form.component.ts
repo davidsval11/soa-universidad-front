@@ -7,10 +7,10 @@ import { CommonService } from '../services/common.service';
 
 export abstract class CommonFormComponent <E extends Generic,S extends CommonService<E>> implements OnInit {
   
-  titulo!:string;
-  model!:E;
+  titulo:string;
+  model:E;
   error:any;
-  protected nombreModel!:string;
+  protected nombreModel:string;
   protected redirect!:string;
   constructor(protected service:S, protected router:Router, protected route:ActivatedRoute) { }
 

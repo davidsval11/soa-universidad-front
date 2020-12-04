@@ -21,8 +21,11 @@ import { PeriodosAcademicosFormComponent } from './components/periodos-academico
 import { DepartamentosComponent } from './components/departamentos/departamentos.component';
 import { DepartamentoFormComponent } from './components/departamentos/departamento-form.component';
 import { FacultadFormComponent } from './components/facultades/facultad-form.component';
-import { PreguntaComponent } from './components/pregunta/pregunta.component';
-import { PreguntaFormComponent } from './components/pregunta/pregunta-form.component';
+import { CursosComponent } from './components/cursos/cursos.component';
+import { CursoFormComponent } from './components/cursos/curso-form.component';
+import { GruposComponent } from './components/grupos/grupos.component';
+import { GrupoFormComponent } from './components/grupos/grupo-form.component';
+import { EvaluacionFormComponent } from './components/evaluaciones/evaluacion-form.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import { PreguntaFormComponent } from './components/pregunta/pregunta-form.compo
     EstudiantesComponent,
     FacultadesComponent,
     EvaluacionesComponent,
+    EvaluacionFormComponent,
     EstudianteFormComponent,
     HomeComponent,
     LoginComponent,
@@ -40,8 +44,10 @@ import { PreguntaFormComponent } from './components/pregunta/pregunta-form.compo
     DepartamentosComponent,
     DepartamentoFormComponent,
     FacultadFormComponent,
-    PreguntaComponent,
-    PreguntaFormComponent
+    CursosComponent,
+    CursoFormComponent,
+    GruposComponent,
+    GrupoFormComponent
   ],
   imports: [
     LayoutModule,
