@@ -1,0 +1,64 @@
+<div class="wrapper">
+	<div class="content-wrapper">
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-6">
+						<h2 class="mb-0">{{ titulo }}</h2>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item">
+								Home
+							</li>
+							<li class="breadcrumb-item active"></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="content">
+			<div class="container-fluid">
+				<div class="card">
+					<div class="card-body">
+						<form>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="nombre">Nombre</label>
+										<input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control"
+											[(ngModel)]="model.nombre">
+										<div class="alert alert-danger" *ngIf="error && error.nombre">
+											{{ error.nombre }}
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="descripcion">Descripcion</label>
+										<input type="text" id="descripcion" name="descripcion" placeholder="Descripcion" class="form-control"
+											[(ngModel)]="model.descripcion">
+										<div class="alert alert-danger" *ngIf="error && error.descripcion">
+											{{ error.descripcion }}
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="card-footer">
+						<div class="row">
+							<button type="button" class="btn btn-primary col-md-1 pr-1" (click)="model.id? modificar(): crear()">
+								<i class="fas fa-paper-plane"></i><br />{{model.id? 'Modificar': 'Guardar'}}
+							</button>
+							<button class="btn bg-secondary col-md-1" routerLink="/facultades">
+								<i class="fas fa-reply"></i><br />Volver
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
