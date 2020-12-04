@@ -13,6 +13,7 @@ import { PeriodosAcademicosFormComponent } from './components/periodos-academico
 import { DepartamentosComponent } from './components/departamentos/departamentos.component';
 import { DepartamentoFormComponent } from './components/departamentos/departamento-form.component';
 import { FacultadFormComponent } from './components/facultades/facultad-form.component';
+import { PreguntaComponent } from './components/pregunta/pregunta.component';
 
 
 const routes: Routes = [
@@ -40,7 +41,11 @@ const routes: Routes = [
   // RUTAS DEPARTAMENTOS
   {path:'departamentos', component:DepartamentosComponent},
   {path:'departamentos/form', component:DepartamentoFormComponent},
-  {path:'departamentos/form/:id', component:DepartamentoFormComponent}
+  {path:'departamentos/form/:id', component:DepartamentoFormComponent},
+  // RUTAS PREGUNTAS
+  {path:'preguntas', component:PreguntaComponent},
+  {path:'preguntas/form', component:DepartamentoFormComponent},
+  {path:'preguntas/form/:id', component:DepartamentoFormComponent}
   
 ];
 
