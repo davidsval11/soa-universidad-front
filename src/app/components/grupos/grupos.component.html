@@ -25,7 +25,7 @@
               <div class="col-md-11"></div>
               <div class="col-md-1">
                 <div class="btn-group float-right">
-                  <button type="button" class="btn btn-primary" routerLink="/evaluaciones/form">
+                  <button type="button" class="btn btn-primary" routerLink="/grupos/form">
                     <i class="fas fa-plus"></i>
                   </button>
                 </div>
@@ -38,26 +38,26 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Nombre</th>
-                  <th>Grupo</th>
-                  <th>Tiempo</th>
-                  <th>Puntos</th>
+                  <th>Codigo</th>
+                  <th>Profesor</th>
+                  <th>Curso</th>
+                  <th>Cupo Max</th>                  
                   <th>Accion</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let evaluacion of lista">
-                  <td>{{ evaluacion.id }}</td>
-                  <td>{{ evaluacion.nombre }}</td>
-                  <td>{{ evaluacion.grupo.codigo }}</td>
-                  <td>{{ evaluacion.tiempo }}</td>
-                  <td>{{ evaluacion.puntos }}</td>
+                <tr *ngFor="let grupo of lista">
+                  <td>{{ grupo.id }}</td>
+                  <td>{{ grupo.codigo }}</td>
+                  <td>{{ grupo.profesor.nombres }} {{ grupo.profesor.apellidos }}</td>
+                  <td>{{ grupo.curso.nombre }}</td>
+                  <td>{{ grupo.cupoMax }}</td>
                   <td>
                     <div class="btn-group float-right">
-                      <button type="button" class="btn btn-sm bg-navy" [routerLink]="['/evaluaciones/form', evaluacion.id]">
+                      <button type="button" class="btn btn-sm bg-navy" [routerLink]="['/grupos/form', grupo.id]">
                         <i class="fas fa-edit"></i>
                       </button>
-                      <button type="button" class="btn btn-sm btn-danger" (click)="eliminar(evaluacion)">
+                      <button type="button" class="btn btn-sm btn-danger" (click)="eliminar(grupo)">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </div>

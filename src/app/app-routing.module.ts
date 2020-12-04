@@ -13,6 +13,11 @@ import { PeriodosAcademicosFormComponent } from './components/periodos-academico
 import { DepartamentosComponent } from './components/departamentos/departamentos.component';
 import { DepartamentoFormComponent } from './components/departamentos/departamento-form.component';
 import { FacultadFormComponent } from './components/facultades/facultad-form.component';
+import { CursosComponent } from './components/cursos/cursos.component';
+import { CursoFormComponent } from './components/cursos/curso-form.component';
+import { GruposComponent } from './components/grupos/grupos.component';
+import { GrupoFormComponent } from './components/grupos/grupo-form.component';
+import { EvaluacionFormComponent } from './components/evaluaciones/evaluacion-form.component';
 
 
 const routes: Routes = [
@@ -33,6 +38,9 @@ const routes: Routes = [
   {path:'facultades/form/:id', component:FacultadFormComponent},
   //RUTAS EVALUACIONES
   {path:'evaluaciones', component:EvaluacionesComponent},
+  {path:'evaluaciones/form', component:EvaluacionFormComponent},
+  {path:'evaluaciones/form/:id', component:EvaluacionFormComponent},
+
   // RUTAS PERIODOS ACADEMICOS
   {path:'periodos-academicos', component:PeriodosAcademicosComponent},
   {path:'periodos-academicos/form', component:PeriodosAcademicosFormComponent},
@@ -40,7 +48,15 @@ const routes: Routes = [
   // RUTAS DEPARTAMENTOS
   {path:'departamentos', component:DepartamentosComponent},
   {path:'departamentos/form', component:DepartamentoFormComponent},
-  {path:'departamentos/form/:id', component:DepartamentoFormComponent}
+  {path:'departamentos/form/:id', component:DepartamentoFormComponent},
+  // RUTAS CURSOS
+  {path:'cursos', component:CursosComponent},
+  {path:'cursos/form', component:CursoFormComponent},
+  {path:'cursos/form/:id', component:CursoFormComponent},
+   // RUTAS GRUPOS
+  {path:'grupos', component:GruposComponent},
+  {path:'grupos/form', component:GrupoFormComponent},
+  {path:'grupos/form/:id', component:GrupoFormComponent}
   
 ];
 
