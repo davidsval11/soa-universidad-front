@@ -16,6 +16,8 @@ import { EvaluacionesComponent } from './components/evaluaciones/evaluaciones.co
 import { EstudianteFormComponent } from './components/estudiantes/estudiante-form.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/usuarios/login.component';
+import { PeriodosAcademicosComponent } from './components/periodos-academicos/periodos-academicos.component';
+import { PeriodosAcademicosFormComponent } from './components/periodos-academicos/periodos-academicos-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { LoginComponent } from './components/usuarios/login.component';
     EvaluacionesComponent,
     EstudianteFormComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    PeriodosAcademicosComponent,
+    PeriodosAcademicosFormComponent
   ],
   imports: [
     LayoutModule,

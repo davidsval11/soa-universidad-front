@@ -8,20 +8,31 @@ import { FacultadesComponent } from './components/facultades/facultades.componen
 import { EvaluacionesComponent } from './components/evaluaciones/evaluaciones.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/usuarios/login.component';
+import { PeriodosAcademicosComponent } from './components/periodos-academicos/periodos-academicos.component';
+import { PeriodosAcademicosFormComponent } from './components/periodos-academicos/periodos-academicos-form.component';
 
 
 const routes: Routes = [
   {path:'', pathMatch:'full', redirectTo:'login'},
+  {path:'home', component:HomeComponent},
+  {path:'login', component:LoginComponent},
+  // RUTAS PROFESORES
   {path:'profesores', component:ProfesoresComponent},
   {path:'profesores/form', component:ProfesorFormComponent},
   {path:'profesores/form/:id', component:ProfesorFormComponent},
+  // RUTAS ESTUDIANTES
   {path:'estudiantes', component:EstudiantesComponent},
   {path:'estudiantes/form', component:EstudianteFormComponent},
   {path:'estudiantes/form/:id', component:EstudianteFormComponent},
+  // RUTAS FACULTADES
   {path:'facultades', component:FacultadesComponent},
+  //RUTAS EVALUACIONES
   {path:'evaluaciones', component:EvaluacionesComponent},
-  {path:'home', component:HomeComponent},
-  {path:'login', component:LoginComponent}
+  // RUTAS PERIODOS ACADEMICOS
+  {path:'periodos-academicos', component:PeriodosAcademicosComponent},
+  {path:'periodos-academicos/form', component:PeriodosAcademicosFormComponent},
+  {path:'periodos-academicos/form/:id', component:PeriodosAcademicosFormComponent}
+  
 ];
 
 @NgModule({
