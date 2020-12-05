@@ -1,4 +1,5 @@
 import { Departamento } from './departamento';
+import { Grupo } from './grupo';
 import { PeriodoAcademico } from './periodo-academico';
 
 export class Curso {
@@ -9,4 +10,5 @@ export class Curso {
     periodoAcademico:PeriodoAcademico;
     departamento:Departamento;
     create_at:string;
+    grupos:Array<Grupo>=[];
 }

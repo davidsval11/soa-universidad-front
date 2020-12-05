@@ -26,6 +26,9 @@ import { CursoFormComponent } from './components/cursos/curso-form.component';
 import { GruposComponent } from './components/grupos/grupos.component';
 import { GrupoFormComponent } from './components/grupos/grupo-form.component';
 import { EvaluacionFormComponent } from './components/evaluaciones/evaluacion-form.component';
+import { PreguntaFormComponent } from './components/pregunta/pregunta-form.component';
+import { PreguntaComponent } from './components/pregunta/pregunta.component';
+import { InscripcionComponent } from './components/inscripcion/inscripcion.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { EvaluacionFormComponent } from './components/evaluaciones/evaluacion-fo
     CursosComponent,
     CursoFormComponent,
     GruposComponent,
-    GrupoFormComponent
+    GrupoFormComponent,
+    PreguntaFormComponent,
+    PreguntaComponent,
+    InscripcionComponent
   ],
   imports: [
     LayoutModule,

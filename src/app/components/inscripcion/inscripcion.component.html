@@ -1,0 +1,105 @@
+<div class="wrapper">
+  <div class="content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2 class="mb-0">{{ titulo }}</h2>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item">
+                Home
+              </li>
+              <li class="breadcrumb-item active">{{ titulo }}</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="card">
+          <div class="card-header pt-2 pb-2">
+            <div class="row">
+              <div class="col-md-11"></div>
+              <div class="col-md-1">
+                <div class="btn-group float-right">
+                  <button type="button" class="btn btn-primary" routerLink="/grupos/form">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6" *ngFor="let curso of lista">
+                <div class="card card-info card-outline">
+                  <div class="card-header">
+                    <h3 class="card-title m-0">{{ curso.nombre }}</h3>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <p><b>Codigo: </b>{{ curso.codigo }}</p>
+                        <p><b>Descripcion: </b>{{curso.descripcion}}</p>
+                        <p><b>Departamento: </b>{{curso.departamento.nombre}}</p>
+                        <p><b>Facultad: </b>{{curso.departamento.facultad.nombre}}</p>
+                      </div>
+                      <div class="col md-4">
+                        <button class="btn btn-info" (click)="listarGrupos(curso)" data-toggle="modal"
+                          data-target="#modal-form-items">
+                          INSCRIBIRME
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <mat-paginator [length]="totalRegistros" [pageSize]="totalPorPagina" [pageIndex]="paginaActual"
+              [pageSizeOptions]="pageSizeOptions" (page)="paginar($event)" showFirstLastButtons class="float-left mx-2">
+            </mat-paginator>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <div class="modal fade" id="modal-form-items">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-frontera pt-2 pb-2">
+            <h4 class="modal-title">Grupos</h4>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" id="close-modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-stripped table-sm table-hover">
+                  <thead>
+                    <tr>
+                      <th>Codigo</th>
+                      <th>Profesor</th>
+                      <th>Inscribirme</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let grupo of grupos">
+                      <td>{{grupo.codigo}}</td>
+                      <td>{{grupo.profesor.nombres}} {{grupo.profesor.apellidos}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

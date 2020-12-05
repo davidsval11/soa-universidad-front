@@ -18,46 +18,55 @@ import { CursoFormComponent } from './components/cursos/curso-form.component';
 import { GruposComponent } from './components/grupos/grupos.component';
 import { GrupoFormComponent } from './components/grupos/grupo-form.component';
 import { EvaluacionFormComponent } from './components/evaluaciones/evaluacion-form.component';
+import { PreguntaComponent } from './components/pregunta/pregunta.component';
+import { PreguntaFormComponent } from './components/pregunta/pregunta-form.component';
+import { InscripcionComponent } from './components/inscripcion/inscripcion.component';
 
 
 const routes: Routes = [
-  {path:'', pathMatch:'full', redirectTo:'login'},
-  {path:'home', component:HomeComponent},
-  {path:'login', component:LoginComponent},
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   // RUTAS PROFESORES
-  {path:'profesores', component:ProfesoresComponent},
-  {path:'profesores/form', component:ProfesorFormComponent},
-  {path:'profesores/form/:id', component:ProfesorFormComponent},
+  { path: 'profesores', component: ProfesoresComponent },
+  { path: 'profesores/form', component: ProfesorFormComponent },
+  { path: 'profesores/form/:id', component: ProfesorFormComponent },
   // RUTAS ESTUDIANTES
-  {path:'estudiantes', component:EstudiantesComponent},
-  {path:'estudiantes/form', component:EstudianteFormComponent},
-  {path:'estudiantes/form/:id', component:EstudianteFormComponent},
+  { path: 'estudiantes', component: EstudiantesComponent },
+  { path: 'estudiantes/form', component: EstudianteFormComponent },
+  { path: 'estudiantes/form/:id', component: EstudianteFormComponent },
   // RUTAS FACULTADES
-  {path:'facultades', component:FacultadesComponent},
-  {path:'facultades/form', component:FacultadFormComponent},
-  {path:'facultades/form/:id', component:FacultadFormComponent},
+  { path: 'facultades', component: FacultadesComponent },
+  { path: 'facultades/form', component: FacultadFormComponent },
+  { path: 'facultades/form/:id', component: FacultadFormComponent },
   //RUTAS EVALUACIONES
-  {path:'evaluaciones', component:EvaluacionesComponent},
-  {path:'evaluaciones/form', component:EvaluacionFormComponent},
-  {path:'evaluaciones/form/:id', component:EvaluacionFormComponent},
+  { path: 'evaluaciones', component: EvaluacionesComponent },
+  { path: 'evaluaciones/form', component: EvaluacionFormComponent },
+  { path: 'evaluaciones/form/:id', component: EvaluacionFormComponent },
 
   // RUTAS PERIODOS ACADEMICOS
-  {path:'periodos-academicos', component:PeriodosAcademicosComponent},
-  {path:'periodos-academicos/form', component:PeriodosAcademicosFormComponent},
-  {path:'periodos-academicos/form/:id', component:PeriodosAcademicosFormComponent},
+  { path: 'periodos-academicos', component: PeriodosAcademicosComponent },
+  { path: 'periodos-academicos/form', component: PeriodosAcademicosFormComponent },
+  { path: 'periodos-academicos/form/:id', component: PeriodosAcademicosFormComponent },
   // RUTAS DEPARTAMENTOS
-  {path:'departamentos', component:DepartamentosComponent},
-  {path:'departamentos/form', component:DepartamentoFormComponent},
-  {path:'departamentos/form/:id', component:DepartamentoFormComponent},
+  { path: 'departamentos', component: DepartamentosComponent },
+  { path: 'departamentos/form', component: DepartamentoFormComponent },
+  { path: 'departamentos/form/:id', component: DepartamentoFormComponent },
   // RUTAS CURSOS
-  {path:'cursos', component:CursosComponent},
-  {path:'cursos/form', component:CursoFormComponent},
-  {path:'cursos/form/:id', component:CursoFormComponent},
-   // RUTAS GRUPOS
-  {path:'grupos', component:GruposComponent},
-  {path:'grupos/form', component:GrupoFormComponent},
-  {path:'grupos/form/:id', component:GrupoFormComponent}
-  
+  { path: 'cursos', component: CursosComponent },
+  { path: 'cursos/form', component: CursoFormComponent },
+  { path: 'cursos/form/:id', component: CursoFormComponent },
+  // RUTAS GRUPOS
+  { path: 'grupos', component: GruposComponent },
+  { path: 'grupos/form', component: GrupoFormComponent },
+  { path: 'grupos/form/:id', component: GrupoFormComponent },
+  // RUTAS PREGUNTAS
+  { path: 'preguntas', component: PreguntaComponent },
+  { path: 'preguntas/form', component: PreguntaFormComponent },
+  { path: 'preguntas/form/:id', component: PreguntaFormComponent },
+  // RUTAS INSCRIPCION
+  { path: 'inscripcion', component: InscripcionComponent },
+
 ];
 
 @NgModule({

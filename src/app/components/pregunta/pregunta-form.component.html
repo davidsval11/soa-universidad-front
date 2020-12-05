@@ -1,1 +1,140 @@
-<p>pregunta-form works!</p>
+<div class="wrapper">
+  <div class="content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2 class="mb-0">{{ titulo }}</h2>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item">
+                Home
+              </li>
+              <li class="breadcrumb-item active"></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="enunciado">Enunciado</label>
+                  <textarea id="enunciado" name="enunciado" placeholder="Enunciado" class="form-control"
+                    [(ngModel)]="model.enunciado" cols="30" rows="5"></textarea>
+                  <div class="alert alert-danger" *ngIf="error && error.enunciado">
+                    {{ error.enunciado }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="tipo_respuesta">Tipo Respuesta</label>
+                  <select id="tipo_respuesta" name="tipo_respuesta" placeholder="tipo_respuesta" class="form-control"
+                    [(ngModel)]="model.tipo_respuesta">
+                    <option value="1">Seleccion Multiple</option>
+                    <option value="2">Abierta</option>
+                  </select>
+                  <div class="alert alert-danger" *ngIf="error && error.tipo_respuesta">
+                    {{ error.tipo_respuesta }}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="puntos">Puntos</label>
+                  <input type="text" id="puntos" name="puntos" placeholder="puntos" class="form-control"
+                    [(ngModel)]="model.puntos">
+                  <div class="alert alert-danger" *ngIf="error && error.puntos">
+                    {{ error.puntos }}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="curso">Curso</label>
+                  <select class="form-control" id="curso" name="curso" [(ngModel)]="model.curso">
+                    <option value="">Seleccione...</option>
+                    <option *ngFor="let curso of cursos" [ngValue]="curso">
+                      {{curso.codigo}} - {{curso.nombre}}</option>
+                  </select>
+                  <div class="alert alert-danger" *ngIf="error && error.estado">
+                    {{ error.curso }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title m-0">Opciones Respuestas</h3>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="">Enunciado</label>
+                      <input type="text" id="enunciado" name="enunciado" placeholder="Enunciado" class="form-control"
+                        [(ngModel)]="opcion.enunciado">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label for="">Porcentaje</label>
+                      <input type="number" name="porcentaje" id="porcentaje" class="form-control"
+                        [(ngModel)]="opcion.porcentaje">
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <button type="button" class="btn btn-primary mt-3" (click)="agregarOpcion()">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="row">
+                  <table class="table table-stripperd table-sm table-bordered table-hover thead-dark col-md-6">
+                    <thead>
+                      <tr>
+                        <th>Enunciado</th>
+                        <th>Porccentaje</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let op of model.opciones">
+                        <td>{{ op.enunciado }}</td>
+                        <td class="text-rigth">{{ op.porcentaje }} %</td>
+                        <td>
+                          <button class="btn btn-danger btn-sm" type="button"
+                            (click)="eliminarOpcion(op.enunciado)">&times;</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="row">
+              <button type="button" class="btn btn-primary col-md-1 pr-1" (click)="model.id? modificar(): crear()">
+                <i class="fas fa-paper-plane"></i><br />{{model.id? 'Modificar': 'Guardar'}}
+              </button>
+              <button class="btn bg-secondary col-md-1" routerLink="/preguntas">
+                <i class="fas fa-reply"></i><br />Volver
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
